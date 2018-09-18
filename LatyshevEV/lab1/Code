@@ -1,0 +1,48 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	float left;
+	char sign;
+	float right;
+	bool flag = 0;
+	cout << "Левый операнд пожалуйсто" << endl;
+	cin >> left;
+	cout << "Будьте любезны, правый операнд" << endl;
+	cin >> right;
+	cout << "знак?" << endl;
+	cin >> sign;
+	float result;
+	switch (sign)
+	{
+	case '+': result = left + right;
+		break;
+	case '-': result = left - right;
+		break;
+	case '*' : result = left * right;
+		break;
+	case '/' : 
+		if (right != 0)
+		{ 
+			result = left / right; 
+		}
+		else 
+		{ 
+			flag = 1;
+			cout << "Глупенький, на ноль делить нельзя"<<endl; 
+		}
+		break;
+	default:cout << "Знак не валиден"<< endl;
+		flag = 1;
+		break;
+	}
+	if (flag == 0)
+	{
+		cout << result;
+	}
+	cout << endl;
+	system("pause");
+	return 0;
+}
