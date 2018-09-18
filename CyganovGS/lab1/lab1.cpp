@@ -13,7 +13,7 @@ int main()
 		cin>>FirstNum;
 		cout<<"Input sign:";
 		cin>>digit;
-		cout<<"Input second sign:";
+		cout<<"Input second number:";
 		cin>>SecondNum;
 		switch(digit){
 			case '+':
