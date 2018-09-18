@@ -9,11 +9,11 @@ int main()
 		float FirstNum, SecondNum, result;
 		bool IsThereError=false;
 		char digit;
-		cout<<"Ââåäèòå ïåðâîå ÷èñëî:";
+		cout<<"Input first number:";
 		cin>>FirstNum;
-		cout<<"Ââåäèòå çíàê:";
+		cout<<"Input sign:";
 		cin>>digit;
-		cout<<"Ââåäèòå âòîðîå ÷èñëî:";
+		cout<<"Input second sign:";
 		cin>>SecondNum;
 		switch(digit){
 			case '+':
@@ -28,16 +28,16 @@ int main()
 			case '/':
 				if (SecondNum==0){
 					IsThereError=true;
-					cout<<"Íåëüçÿ äåëèòü íà íîëü...";
+					cout<<"You can not divide by zero...";
 				}else {
 					result=FirstNum/SecondNum;}
 				break;
 			default:
 				IsThereError=true;
-				cout<<"Ýòî íåâåðíûé çíàê..."<<endl;
+				cout<<"Your input sign is not valid..."<<endl;
 		} 
 		if (IsThereError==false) {
-			cout<<"Ðåçóëüòàò: "<<result<<endl;}
+			cout<<"Result: "<<result<<endl;}
 		_getch();
 	/*	system("pause");
 		return 0; */
