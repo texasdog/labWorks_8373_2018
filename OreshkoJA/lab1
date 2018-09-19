@@ -15,7 +15,6 @@ int main()
 	if (second == 0) {
 		if (sign == '/') {
 			cout << "Делить на ноль нельзя" << endl;
-			system("pause");
 		}
 	}
 	else {
@@ -28,12 +27,11 @@ int main()
 			break;
 		case '/': result = first / second;
 			break;
-		default: cout << "Неправильный ввод знака" << endl;
+		default: cout << "Неправильный ввод знака" << endl;	
 			system("pause");
 			return 0;
 		}
 		cout << "Результат:" << result << endl;
-		system("pause");
-		return 0;
 	}
+	system("pause");
 }
