@@ -1,4 +1,4 @@
-#include<iostream>
+##include<iostream>
 #include<string>
 using namespace std;
 int main()
@@ -7,12 +7,12 @@ int main()
 	float left;
 	char sign;
 	float right;
-	bool flag = 0;
-	cout << "Левый операнд пожалуйсто" << endl;
+	bool flag = false;
+	cout << "Введите левый операнд" << endl;
 	cin >> left;
-	cout << "Будьте любезны, правый операнд" << endl;
+	cout << "Введите правый операнд" << endl;
 	cin >> right;
-	cout << "знак?" << endl;
+	cout << "Введите знак" << endl;
 	cin >> sign;
 	float result;
 	switch (sign)
@@ -24,25 +24,26 @@ int main()
 	case '*' : result = left * right;
 		break;
 	case '/' : 
-		if (right != 0)
+		if (right != false)
 		{ 
 			result = left / right; 
 		}
 		else 
 		{ 
-			flag = 1;
-			cout << "Глупенький, на ноль делить нельзя"<<endl; 
+			flag = true;
+			cout << "Ошибка: деление на ноль"<<endl; 
 		}
 		break;
-	default:cout << "Знак не валиден"<< endl;
-		flag = 1;
+	default:cout << "Ошибка: знак не валиден"<< endl;
+		flag = true;
 		break;
 	}
-	if (flag == 0)
+	if (flag == false)
 	{
-		cout << result;
+		cout << left << sign<< right << '=' << result;
 	}
 	cout << endl;
 	system("pause");
 	return 0;
 }
+
