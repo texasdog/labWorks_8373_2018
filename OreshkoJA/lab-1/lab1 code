@@ -27,10 +27,13 @@ int main()
 			break;
 		case '/': result = first / second;
 			break;
-		default: cout << "Неправильный ввод знака. Пожалуйста, нажмите кнопку повтора" << endl;	
+		default: cout << "Неправильный ввод знака, пожалуйста, нажмите кнопку повтора" << endl;	
 			break;
 		}
-		cout << "Результат:" << result << endl;
+		if (sign == '+', '-', '/', '*')
+		{
+			cout << "Результат:" << result << endl;
+		}
 	}
 	system("pause");
 }
