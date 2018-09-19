@@ -27,9 +27,8 @@ int main()
 			break;
 		case '/': result = first / second;
 			break;
-		default: cout << "Неправильный ввод знака" << endl;	
-			system("pause");
-			return 0;
+		default: cout << "Неправильный ввод знака. Пожалуйста, нажмите кнопку повтора" << endl;	
+			break;
 		}
 		cout << "Результат:" << result << endl;
 	}
