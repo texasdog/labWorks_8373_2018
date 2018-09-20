@@ -12,32 +12,31 @@ int main()
 	cout << "Insert second argument" << endl;
 	cin >> right;
 
+
 	switch (sign)
 	{
-	case '+': result = left + right;
+	case '+':  cout << left << sign << right << " = " << left + right;
 		break;
 
-	case '-': result = left - right;
+	case '-':  cout << left << sign << right << " = " << left - right;
 		break;
 
-	case '*': result = left * right;
+	case '*':  cout << left << sign << right << " = " << left * right;
 		break;
 
-	case '/': if (right == 0) {
-		cout << "Waring: it's not available to divine by 0";
-		_getch();
-	}
+	case '/': if (right != 0) {
+		cout << left << sign << right << " = " << left / right;
+		break;
+	                         }
 			  else {
-		result = left / right;
-	}
-			  break;
+		cout << "Waring: it's not available to divide by 0";
+		
+		break;
+	               }
+
 	default: cout << "Waring: wrong sign";
+	}
+	cout << endl;
 		_getch();
-	}
-	if ((sign == '/' ) && (right !=  0)) {
-		cout << "Answer: " << left << sign << right << " = " << result; 
-	}
-	
-	_getch();
-	return 0;
+		return 0;
 }
