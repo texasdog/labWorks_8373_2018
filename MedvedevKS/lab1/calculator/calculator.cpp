@@ -5,46 +5,48 @@ using namespace std;
 
 int main()
 {
-	float left, right, result; char sign;
+	float left, right, result; 
+	char sign;
 	setlocale(0, "");
-	cout << "Ââåäèòå ëåâûé îïåðàíò: " << endl;
-	cin >> left;
-	cout << "Ââåäèòå ïðàâûé îïåðàíò: " << endl;
-	cin >> right;
-	cout << "Ââåäèòå çíàê âûðàæåíèÿ:" << endl;
-	cin >> sign;
-		while (!(sign == '+' || sign == '-' || sign == '*' || sign == '/'))
-			{
-			cout << "Ââåäèòå ïðàâèëüíûé çíàê: " << endl;
-			cin >> sign;
-			}
+	do {
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð»ÐµÐ²Ñ‹Ð¹ Ð¾Ð¿ÐµÑ€Ð°Ð½Ñ‚: " << endl;
+		cin >> left;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ñ€Ð°Ð²Ñ‹Ð¹ Ð¾Ð¿ÐµÑ€Ð°Ð½Ñ‚: " << endl;
+		cin >> right;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ðº Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ:" << endl;
+		cin >> sign;
+			while (!(sign == '+' || sign == '-' || sign == '*' || sign == '/'))
+				{
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð·Ð½Ð°Ðº: " << endl;
+				cin >> sign;
+				}
 
-		switch (sign)
-			{
-			case'+':
-				result = left + right;
-				break;
-			case'-':
-				result = left - right;
-				break;
-			case'*':
-				result = left*right;
-				break;
-			case'/':
-				if (right == 0) 
-					{
-					cout << "Íà íîëü äåëèòü íåëüçÿ!";
-					_getch();
-					return 0;
-					}
-				else 
-					{
-					result = left / right;
+			switch (sign)
+				{
+				case'+':
+					result = left + right;
 					break;
-					}
-			}
+				case'-':
+					result = left - right;
+					break;
+				case'*':
+					result = left*right;
+					break;
+				case'/':
+					if (right == 0)
+						{
+						cout << "Ð’Ñ‹ Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð°Ð»Ð¸ÑÑŒ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÑŒ Ð½Ð° Ð½Ð¾Ð»ÑŒ - Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ð¾Ðµ Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ!"<<endl;
+						continue;
+						}
+					else
+						{
+						result = left / right;
+						break;
+						}
+				}
 
-	cout << "Ðåçóëüòàò: " << endl << left << sign << right << "=" << result;
-	_getch();
+		cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: " << endl << left << sign << right << "=" << result;
+		_getch();
+	} while (right == 0);
 	return 0;
 }
