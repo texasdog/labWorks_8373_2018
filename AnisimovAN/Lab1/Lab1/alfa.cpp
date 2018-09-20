@@ -23,11 +23,13 @@ int main()
 	case '*': result = left * right;
 		break;
 
-	case '/': result = left / right;
-		if (right == 0) {
+	case '/': if (right == 0) {
 			cout << "Waring: it's not available to divine by 0";
 			_getch();
 		}
+			else {
+				result = left / right;
+			}
 		break;
 	default: cout <<"Waring: wrong sign";
 		_getch();
