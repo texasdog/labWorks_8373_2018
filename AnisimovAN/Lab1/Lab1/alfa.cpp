@@ -27,12 +27,10 @@ int main()
 		if (right == 0) {
 			cout << "Waring: it's not available to divine by 0";
 			_getch();
-			return 0;
 		}
 		break;
 	default: cout <<"Waring: wrong sign";
 		_getch();
-		return 0;
 	}
 	cout << "Answer: "<<left <<sign << right<< " = " << result;
 
