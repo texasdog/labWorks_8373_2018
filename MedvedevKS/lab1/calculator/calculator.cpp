@@ -47,6 +47,6 @@ int main()
 
 		cout << "Результат: " << endl << left << sign << right << "=" << result;
 		_getch();
-	} while (right == 0);
+	} while (right == 0 && sign =='/');
 	return 0;
 }
