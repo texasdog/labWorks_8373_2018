@@ -10,16 +10,16 @@ int main()
 	float Val1, Val2, Result;
 
 
-	cout << "Введите первое число: ";
+	cout << "Enter the first number: ";
 	cin >> Val1;
-	cout << "Введите второе число: ";
+	cout << "Enter the second number: ";
 	cin >> Val2;
-	cout << "Введите действие: ";
+	cout << "Enter the operation: ";
 	cin >> Sign;
 
 
 	if (Sign != '*' && Sign!= '/' && Sign !='-' && Sign!='+') {
-		cout << "Недопустимое действие";
+		cout << "Wrong operation, try it again";
 		_getch();
 		return 0;
 	}
@@ -32,7 +32,7 @@ int main()
 		Result = Val1 / Val2;
 	}
 			  else {
-				cout << "Ошибка: деление на ноль";
+				cout << "Error: wrong operation with zero";
 				_getch();
 				return 0;
 			  }
@@ -42,6 +42,6 @@ int main()
 	case '-': Result = Val1 - Val2;
 		break;
 	}
-	cout <<"Результат:"<< Result;
+	cout <<"Result:"<< Result;
 	_getch();
 }
