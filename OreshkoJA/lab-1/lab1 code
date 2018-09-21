@@ -19,7 +19,6 @@ int main()
 			error = 1;
 		}
 	}
-	else {
 		switch (sign) {
 		case '+': result = first + second;
 			break;
@@ -32,7 +31,6 @@ int main()
 		default: 	error = 1;
 			cout << "Неправильный ввод знака" << endl;
 			break;
-		}
 		}
 		if (error == 1) {  }
 		else
