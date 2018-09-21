@@ -15,28 +15,28 @@ int main()
 
 	switch (sign)
 	{
-	case '+':  cout << left << sign << right << " = " << left + right;
+	case '+':  cout << "Answer" << left << sign << right << " = " << left + right;
 		break;
 
-	case '-':  cout << left << sign << right << " = " << left - right;
+	case '-':  cout << "Answer" << left << sign << right << " = " << left - right;
 		break;
 
-	case '*':  cout << left << sign << right << " = " << left * right;
+	case '*':  cout << "Answer" << left << sign << right << " = " << left * right;
 		break;
 
 	case '/': if (right != 0) {
-		cout << left << sign << right << " = " << left / right;
+		cout << "Answer" << left << sign << right << " = " << left / right;
 		break;
-	                         }
+	}
 			  else {
 		cout << "Waring: it's not available to divide by 0";
-		
 		break;
-	               }
+	}
 
 	default: cout << "Waring: wrong sign";
+		break;
 	}
 	cout << endl;
-		_getch();
-		return 0;
+	_getch();
+	return 0;
 }
