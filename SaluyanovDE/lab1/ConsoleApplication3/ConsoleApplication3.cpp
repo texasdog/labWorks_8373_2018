@@ -7,7 +7,8 @@ int main()
 {
 	setlocale(0, "");
 	char Sign;
-	float Val1, Val2;
+	float Val1, Val2, Result, a;
+	a = 0;
 
 
 	cout << "Enter the first number: ";
@@ -18,25 +19,31 @@ int main()
 	cin >> Val2;
 
 
-	if (Sign != '*' && Sign != '/' && Sign != '-' && Sign != '+') {
-		cout << "Wrong sign";
-	}
-
-
 	switch (Sign) {
-	case '*': cout << Val1 << " " << "*" << " " << Val2 << " " << "=" << " " << Val1*Val2;
+	case '*': Result = Val1*Val2;
 		break;
 	case '/': if (Val2 != 0) {
-		cout << Val1 << " " << "/" << " " << Val2 << " " << "=" << " " << Val1 / Val2;
-	}
-			  else {
+		 Result = Val1 / Val2;
+		 break;
+	}		  else {
 				  cout << "Error: division by zero";
-			  }
+				  a++;
+				  break;
+				   }
 			  break;
-	case '+': cout << Val1 << " " << "*" << " " << Val2 << " " << "=" << " " << Val1 + Val2;
+	case '+':  Result = Val1 + Val2;
 		break;
-	case '-': cout << Val1 << " " << "*" << " " << Val2 << " " << "=" << " " << Val1 - Val2;
+	case '-': Result = Val1 - Val2;
+		break;
+	default: cout << "Error: wrong sign";
+		a++;
 		break;
 	}
-	_getch();
+	if (a == 0) {
+		cout << Val1 << " " << Sign << " " << Val2 << " " << "=" << " " << Result;
+		_getch();
+	}
+	else {
+		_getch();
+	}
 }
