@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\kater\documents\visual studio 2015\projects\hello\hello\source.cpp(29): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+  Hello.vcxproj -> C:\Users\kater\documents\visual studio 2015\Projects\Hello\Debug\Hello.exe
+  Hello.vcxproj -> C:\Users\kater\documents\visual studio 2015\Projects\Hello\Debug\Hello.pdb (Partial PDB)
