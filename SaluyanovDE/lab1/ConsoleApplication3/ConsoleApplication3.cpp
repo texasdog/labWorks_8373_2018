@@ -7,40 +7,44 @@ int main()
 {
 	setlocale(0, "");
 	char Sign;
-	//char Calc[29];
-	//int i;
-	/*for (i = 1; i<=29; i++) {
+	float Val1, Val2, Result, a;
+	a = 0;
 
-	}*/
-	//gitbash??
-	float Val1, Val2;
-	cout << "Введите первое число: ";
+
+	cout << "Enter the first number: ";
 	cin >> Val1;
-	cout << endl;
-	cout << "Введите второе число: ";
-	cin >> Val2;
-	cout << "Введите действие: ";
+	cout << "Enter the operation: ";
 	cin >> Sign;
-	switch(Sign) {
-		case '*': cout << Val1*Val2;
-			break;
-		case '/': if (Val2 != 0) {
-			cout << Val1 / Val2;
-		}
-				  else {
-					  cout << "Ошибка: деление на ноль";
-				  }
-			break;
-		case '+': cout << Val1+Val2;
-			break;
-		case '-': cout << Val1-Val2;
-			break;
-	}
-	if (Sign != '*', Sign != '/', Sign != '-', Sign != '+') {
-		cout << "Ошибка: введен неверный знак";
+	cout << "Enter the second number: ";
+	cin >> Val2;
 
+
+	switch (Sign) {
+	case '*': Result = Val1*Val2;
+		break;
+	case '/': if (Val2 != 0) {
+		 Result = Val1 / Val2;
+		 break;
+	}		  
+			  else {
+				  cout << "Error: division by zero";
+				  a++;
+				  break;
+				   }
+			  break;
+	case '+':  Result = Val1 + Val2;
+		break;
+	case '-': Result = Val1 - Val2;
+		break;
+	default: cout << "Error: wrong sign";
+		a++;
+		break;
 	}
-	cout << endl;
-	_getch();
-	//Работа с флоатами, деление на ноль, неверный знак.
+	if (a == 0) {
+		cout << Val1 << " " << Sign << " " << Val2 << " " << "=" << " " << Result;
+		_getch();
+	}
+	else {
+		_getch();
+	}
 }
