@@ -7,18 +7,16 @@ int main() {
 	setlocale(0, "");
 	float first, second, result;
 	char sign;
-	cout << "Ââåäèòå 1 ÷èñëî." << endl;
+	bool check = 0;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1 Ñ‡Ð¸ÑÐ»Ð¾." << endl;
 	cin >> first;
-	cout << "Ââåäèòå ñèìâîë îïåðàöèè." << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð» Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸." << endl;
 	cin >> sign;
-	cout << "Ââåäèòå 2 ÷èñëî." << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 2 Ñ‡Ð¸ÑÐ»Ð¾." << endl;
 	cin >> second;
 	if (second == 0 && sign == '/') {
-			cout << "Îøèáêà. Âû ïûòàëèñü ðàçäåëèòü íà 0. Ââåäèòå äðóãîé çíàìåíàòåëü èëè ââåäèòå 0 åùå ðàç äëÿ âûõîäà èç ïðîãðàììû." << endl;
-			cin >> second;
-			if (second == 0) {
-				return 0;
-			}
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ°.Ð’Ñ‹ Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð°Ð»Ð¸ÑÑŒ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÑŒ Ð½Ð° Ð½Ð¾Ð»ÑŒ." << endl;
+		check == 1;
 	}
 	switch (sign) {
 	case '+': result = first + second;
@@ -29,11 +27,12 @@ int main() {
 		break;
 	case '/': result = first / second;
 		break;
-	default: cout << "Îøèáêà. Âû ââåëè íåïîäõîäÿùèé ñèìâîë îïåðàöèè,íàæìèòå ëþáóþ êëàâèøó äëÿ âûõîäà èç ïðîãðàììû." << endl;
-		_getch();
-		return 0;
+	default: cout << "ÐžÑˆÐ¸Ð±ÐºÐ°. Ð’Ñ‹ Ð²Ð²ÐµÐ»Ð¸ Ð½ÐµÐ¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ ÑÐ¸Ð¼Ð²Ð¾Ð» Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸." << endl;
+		check == 1;
 	}
-	cout << "Îòâåò: " << result;
+	if (check != 0) {
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: " << result;
+	}
 	_getch();
 	return 0;
 }
