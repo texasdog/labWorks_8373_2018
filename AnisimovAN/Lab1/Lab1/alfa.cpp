@@ -37,8 +37,7 @@ int main()
 		break;
 	}
 	if (check==0) {
-		cout << result;
-		cout << endl;
+		cout << result << endl;
 	}
 	_getch();
 	return 0;
