@@ -43,4 +43,5 @@ int main()
 	if (a == 0) {
 		cout << Val1 << " " << Sign << " " << Val2 << " " << "=" << " " << Result;
 	_getch();
+	}
 }
