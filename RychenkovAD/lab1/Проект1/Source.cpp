@@ -35,9 +35,9 @@ int main()
 			       flag = false;
 			       cout << "Îøèáêà ââîäà!" << endl;
 			}
-		}
-	    if(flag){
+		 }
+	     if(flag){
 		       cout << first << " " << sign << " " << second << " " << "=" << " " << resault << endl;
-	    }
+	     }
 
 }
