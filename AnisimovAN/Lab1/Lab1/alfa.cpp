@@ -27,12 +27,12 @@ int main()
 		result = left / right;
 		break;
 	}	  else {
-		cout << "Waring: it's not available to divide by 0";
+		cout << "Waring: it's not available to divide by 0!";
 		check++;
 		break;
 	}
 
-	default: cout << "Waring: wrong sign";
+	default: cout << "Waring: wrong sign!";
 		check++;
 		break;
 	}
