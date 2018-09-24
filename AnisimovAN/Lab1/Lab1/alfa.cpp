@@ -13,8 +13,7 @@ int main()
 	cin >> right;
 
 
-	switch (sign)
-	{
+	switch (sign){
 	case '+':result = left + right;
 		break;
 
@@ -27,9 +26,9 @@ int main()
 	case '/': if (right != 0) {
 		result = left / right;
 		break;
-	}
-			  else {
+	}	  else {
 		cout << "Waring: it's not available to divide by 0";
+		check++;
 		break;
 	}
 
@@ -37,7 +36,7 @@ int main()
 		check++;
 		break;
 	}
-	if ((sign != '/') && (right != 0) && (check==0)) {
+	if (check==0) {
 		cout << result;
 		cout << endl;
 	}
