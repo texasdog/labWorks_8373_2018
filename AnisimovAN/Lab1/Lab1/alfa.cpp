@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-	float left, right, result, check=0;
+	float left, right, result, check = 0;
 	char sign;
 	cout << "Insert first argument" << endl;
 	cin >> left;
@@ -13,8 +13,7 @@ int main()
 	cin >> right;
 
 
-	switch (sign)
-	{
+	switch (sign){
 	case '+':result = left + right;
 		break;
 
@@ -28,16 +27,16 @@ int main()
 		result = left / right;
 		break;
 	}
-			  else {
+		else {
 		cout << "Waring: it's not available to divide by 0";
+		check++;
 		break;
 	}
-
 	default: cout << "Waring: wrong sign";
 		check++;
 		break;
 	}
-	if ((sign != '/') && (right != 0) && (check==0)) {
+	if (check == 0) {
 		cout << result;
 		cout << endl;
 	}
