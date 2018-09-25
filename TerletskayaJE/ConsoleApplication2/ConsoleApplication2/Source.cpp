@@ -8,12 +8,12 @@ int main()
 	setlocale(0, "");
 	float left, right, result;
 	int erorr = 0;
-	cout << "Ââåäèòå ëåâûé îïïåðàíò: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã«Ã¥Ã¢Ã»Ã© Ã®Ã¯Ã¯Ã¥Ã°Ã Ã­Ã²: ";
 	cin >> left;
-	cout << "Ââåäèòå ïðàâûé îïïåðàíò: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã°Ã Ã¢Ã»Ã© Ã®Ã¯Ã¯Ã¥Ã°Ã Ã­Ã²: ";
 	cin >> right;
 	char sign;
-	cout << "Ââåäèòå çíàê ìåæäó îïïåðàíòàìè: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã§Ã­Ã Ãª Ã¬Ã¥Ã¦Ã¤Ã³ Ã®Ã¯Ã¯Ã¥Ã°Ã Ã­Ã²Ã Ã¬Ã¨: ";
 	cin >> sign;
 	switch (sign)
 	{
@@ -26,9 +26,8 @@ int main()
 	case '/':
 		if (right == 0)
 		{
-			cout << "Íà íîëü äåëèòü íåëüçÿ!";
+			cout << "ÃÃ  Ã­Ã®Ã«Ã¼ Ã¤Ã¥Ã«Ã¨Ã²Ã¼ Ã­Ã¥Ã«Ã¼Ã§Ã¿!";
 			erorr = 1;
-			break;
 		}
 		else
 		{
@@ -36,18 +35,18 @@ int main()
 			break;
 		}
 	default:
-		cout << "Íåïðàâèëüíûé çíàê! ";
+		cout << "ÃÃ¥Ã¯Ã°Ã Ã¢Ã¨Ã«Ã¼Ã­Ã»Ã© Ã§Ã­Ã Ãª! ";
 		erorr = 1;
 		break;
 	}
 	if (erorr == 0)
 	{
-		cout << "Ðåçóëüòàò: " << result;
+		cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²: " << result;
 		_getch();
 	}
-	else if (erorr == 1)
+	else
 	{
-		cout << "Îøèáêà!";
+		cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ !";
 		_getch();
 	}
 }
