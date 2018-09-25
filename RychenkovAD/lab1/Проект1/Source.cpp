@@ -40,4 +40,5 @@ int main()
 		       cout << first << " " << sign << " " << second << " " << "=" << " " << resault << endl;
 	    }
 
+		//system("pause");
 }
