@@ -5,40 +5,40 @@ using namespace std;
 
 int main()
 {
-		float first, second, resault;
-		bool flag = true;
-		char sign;
-		setlocale(0, "rus");
-		cout << "Ââåñòè ïåðâîå ÷èñëî: ";
-		cin >> first;
-		cout << "Ââåñòè âòîðîå ÷èñëî: ";
-		cin >> second;
-		cout << "Ââåñòè îïåðàöèþ: ";
-		cin >> sign;
+	float first, second, resault;
+	bool flag = true;
+	char sign;
+	setlocale(0, "rus");
+	cout << "Ã‚Ã¢Ã¥Ã±Ã²Ã¨ Ã¯Ã¥Ã°Ã¢Ã®Ã¥ Ã·Ã¨Ã±Ã«Ã®: ";
+	cin >> first;
+	cout << "Ã‚Ã¢Ã¥Ã±Ã²Ã¨ Ã¢Ã²Ã®Ã°Ã®Ã¥ Ã·Ã¨Ã±Ã«Ã®: ";
+	cin >> second;
+	cout << "Ã‚Ã¢Ã¥Ã±Ã²Ã¨ Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¾: ";
+	cin >> sign;
 	
-		switch(sign){
-			case '+': 
-				resault = first + second; break;
-			case '-':
-				resault = first - second; break;
-			case '*': 
-				resault = first * second; break;
-			case '/':
-				if (second == 0) {
-					flag = false;
-					cout << "Îøèáêà ââîäà!" << endl; break;
-				}
-				else {
-					resault = first / second; break;
-				}
-			default:{
-			       flag = false;
-			       cout << "Îøèáêà ââîäà!" << endl;
+	switch(sign){
+		case '+': 
+			resault = first + second; break;
+		case '-':
+			resault = first - second; break;
+		case '*': 
+			resault = first * second; break;
+		case '/':
+			if (second == 0) {
+				flag = false;
+				cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¢Ã¢Ã®Ã¤Ã !" << endl; break;
 			}
+			else {
+				resault = first / second; break;
+			}
+		default:{
+		       flag = false;
+		       cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¢Ã¢Ã®Ã¤Ã !" << endl;
 		}
-	    if(flag){
-		       cout << first << " " << sign << " " << second << " " << "=" << " " << resault << endl;
-	    }
+	}
+	if(flag){
+               cout << first << " " << sign << " " << second << " " << "=" << " " << resault << endl;
+	}
 
-		//system("pause");
+	//system("pause");
 }
