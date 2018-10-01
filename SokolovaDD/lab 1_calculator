@@ -1,5 +1,4 @@
 #include <iostream> 
-#include <conio.h> 
 using namespace std;
 int main()
 {
@@ -13,6 +12,13 @@ int main()
 	char sign;
 	cout << "Sign:";
 	cin >> sign;
+	int error = 0;
+	if (right == 0) {
+		if (sign == '/') {
+			cout << "cannot be divided by 0 " << endl;
+			error = 1;
+		}
+	}
 	switch (sign)
 	{
 	case'+':result = left + right;
@@ -21,24 +27,21 @@ int main()
 		break;
 	case'*':result = left * right;
 		break;
-	case'/':
-		if (right = '0')
-		{
-			cout << "Error";
-			_getch();
-			break;
-			
-		}
-		else
-		{
-		        result = left / right;
-			break;
-		}
+	case'/':result = left / right;
+		break;
 
-	default:
-		cout << "Other sign";
-	         break;
+	default:   error = 1;
+
+		cout << "Other sign" << endl;
+		break;
 	}
-	cout << "Result:" << result;
-	_getch();
-} 
+	if (error == 1) {}
+
+	else
+
+	{
+	  cout << "Result:" << result << endl;
+	}
+
+	getch();
+}
