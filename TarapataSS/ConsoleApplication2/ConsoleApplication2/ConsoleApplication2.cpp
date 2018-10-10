@@ -30,7 +30,7 @@ int main() {
 	case '*': result = left * right; break;
 	case '/': result = left / right; break; 
 	}
-	cout <<"Результат: "<<result;
+	cout <<"Результат: "<< result;
 	_getch();
 	return 0;
 }
