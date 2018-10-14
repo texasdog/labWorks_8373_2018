@@ -38,10 +38,16 @@ int main()
 	{
 		cout << "Sorted element #" << i+1 << ": " << Mas[i] << endl;
 	}
+	cout << endl;
+	for (int i = 0; i < Num; i=i+2)
+	{
+		cout << "Odd element #" << (i/2)+1 << ": " << Mas[i] << endl;
+	}
 	float sum = 0;
 	int min = Mas[0];
 	int max = Mas[0];
-	for (int i = 0; i < Num; i++)
+	int sch = 0;
+	for (int i = 0; i < Num; i=i+2)
 	{
 		if (Mas[i] > max)
 		{
@@ -51,12 +57,12 @@ int main()
 		{
 			min = Mas[i];
 		}
-		sum = sum + Mas[i] / Num;
+		sum = sum + Mas[i];
+		sch++;
 	}
-	cout << endl;
 	cout << "Minimal element: " << min << endl;
 	cout << "Maximum element: " << max << endl;
-	cout << "Arithmetic mean: " << sum << endl;
+	cout << "Arithmetic mean: " << sum/sch << endl;
 	_getch();
     return 0;
 }
