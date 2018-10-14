@@ -23,7 +23,8 @@ int main()
 	cout << endl;
 
 
-	do {
+	while (a < Arr1Len)
+	{
 		if (a + 1 != Arr1Len && Arr1[a] > Arr1[a + 1])
 		{
 			buffer = Arr1[a];
@@ -37,7 +38,7 @@ int main()
 		counter = 0;
 		a = 0;
 		}
-	} while (a < Arr1Len);
+	}
 
 	
 	cout << "First array(sorted) is: ";
