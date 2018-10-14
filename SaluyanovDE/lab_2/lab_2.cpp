@@ -1,4 +1,3 @@
-
 #include "stdafx.h"
 #include <iostream>
 using namespace std;
@@ -9,7 +8,7 @@ int main()
 	const int Arr1Len = 20;
 	const int Arr2Len = 10;
 	int Arr1[Arr1Len], Arr2[Arr2Len];
-	int buffer, min, max, sum = 0, counter = 0, a = 0;
+	int buffer, min = 0, max = 0, sum = 0, counter = 0, a = 0;
 	
 	for (int i = 0; i < Arr1Len; i++) 
 	{
@@ -54,18 +53,29 @@ int main()
 	{
 		Arr2[i/2] = Arr1[i];
 		cout << Arr2[i/2] << ' ';
+		if(i==1)
+		{
+		min = Arr2[i/2];
+		max = Arr2[i/2];
+		}
+
 	}
 	cout << endl;
-
 	
-	min = Arr2[0];
-	max = Arr2[9];
+	
 	for (int i = 0; i < Arr2Len; i++)
 	{
 		sum = sum + Arr2[i];
+		if(Arr2[i] < min)
+		{
+			min = Arr2[i]
+		}
+		if(max < Arr2[i])
+		{
+			max = Arr2[i]
+		}
 	}
 	cout <<"In second array: \n"<<"Min. value is "<< min <<"\n"<<"Max. value is "<< max <<"\n"<<"Average value is "<< sum / Arr2Len << endl;
 	system("pause");
     return 0;
 }
-
