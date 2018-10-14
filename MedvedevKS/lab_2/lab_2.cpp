@@ -53,7 +53,7 @@ int main()
 	cout << endl;
 	cout << "Min element of 2nd arr: \t" << odd_arr[0] << endl;
 	cout << "Max element of 2nd arr: \t" << odd_arr[size1 - 1] << endl;
-	cout << "Sum of 2nd arr elements:\t" << sum_of_odd_arr << endl;
+	cout << "Average amounth of 2nd arr elements:\t" << sum_of_odd_arr/float(size1) << endl;
 	_getch();
 	return 0;
 }
