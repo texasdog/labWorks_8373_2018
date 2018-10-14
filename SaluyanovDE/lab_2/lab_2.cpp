@@ -13,12 +13,12 @@ int main()
 	
 	for (int i = 0; i < Arr1Len; i++) 
 	{
-	Arr1[i] = rand() % 100 +1;
-	if (i == 0)
-	{
-		cout << "First Array is: ";
-	}
-	cout << Arr1[i]<<' ';
+		Arr1[i] = rand() % 100 +1;
+		if (i == 0)
+		{
+			cout << "First Array is: ";
+		}
+		cout << Arr1[i]<<' ';
 	}
 	cout << endl;
 
@@ -35,8 +35,8 @@ int main()
 		a++;
 		if (a == Arr1Len && counter == 1)
 		{
-		counter = 0;
-		a = 0;
+			counter = 0;
+			a = 0;
 		}
 	}
 
@@ -62,7 +62,7 @@ int main()
 	max = Arr2[9];
 	for (int i = 0; i < Arr2Len; i++)
 	{
-	sum = sum + Arr2[i];
+		sum = sum + Arr2[i];
 	}
 	cout <<"In second array: \n"<<"Min. value is "<< min <<"\n"<<"Max. value is "<< max <<"\n"<<"Average value is "<< sum / Arr2Len << endl;
 	system("pause");
