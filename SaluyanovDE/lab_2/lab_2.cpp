@@ -39,6 +39,7 @@ int main()
 		}
 	} while (a < Arr1Len);
 
+	
 	cout << "First array(sorted) is: ";
 	for (int i = 0; i < Arr1Len; i++)
 	{
@@ -46,6 +47,7 @@ int main()
 	}
 	cout << endl;
 
+	
 	cout << "Second array is: ";
 	for (int i = 1; i < Arr1Len; i = i + 2)
 	{
