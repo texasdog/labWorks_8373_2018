@@ -55,8 +55,8 @@ int main()
 		cout << Arr2[i/2] << ' ';
 		if(i==1)
 		{
-		min = Arr2[i/2];
-		max = Arr2[i/2];
+			min = Arr2[i/2];
+			max = Arr2[i/2];
 		}
 
 	}
