@@ -35,7 +35,7 @@ int main()
 	cout << endl;
 	int min = arr[0];
 	int max = arr[0];
-	int sum = 0;
+	double sum = 0;
 	cout << "Odd numbers:";
 	for (i = 0; i < con; i++) {
 		if (arr[i] % 2) { cout << arr[i]<<" "; }
@@ -51,6 +51,7 @@ int main()
 		}
 	sum = sum + arr[i];
 		}
+	sum = sum / con;
 	cout <<"MAX: "<< max<<endl;
 	cout << "MIN: " << min<<endl;
 	cout << "SUM: " << sum<<endl;
