@@ -66,11 +66,11 @@ int main()
 		sum = sum + Arr2[i];
 		if(Arr2[i] < min)
 		{
-			min = Arr2[i]
+			min = Arr2[i];
 		}
 		if(max < Arr2[i])
 		{
-			max = Arr2[i]
+			max = Arr2[i];
 		}
 	}
 	cout <<"In second array: \n"<<"Min. value is "<< min <<"\n"<<"Max. value is "<< max <<"\n"<<"Average value is "<< sum / Arr2Len << endl;
