@@ -10,13 +10,11 @@ int main()
 	int Arr1[Arr1Len], Arr2[Arr2Len];
 	int buffer, min = 0, max = 0, sum = 0, counter = 0, a = 0;
 	
+	
+	cout << "First Array is: ";
 	for (int i = 0; i < Arr1Len; i++) 
 	{
 		Arr1[i] = rand() % 100 +1;
-		if (i == 0)
-		{
-			cout << "First Array is: ";
-		}
 		cout << Arr1[i]<<' ';
 	}
 	cout << endl;
