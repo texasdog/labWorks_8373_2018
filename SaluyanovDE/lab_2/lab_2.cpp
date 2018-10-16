@@ -61,7 +61,8 @@ int main()
 
 	min = Arr2[0];
 	max = Arr2[0];
-	for (int i = 0; i < counter; i++)
+	sum = Arr2[0];
+	for (int i = 1; i < counter; i++)
 	{
 		sum = sum + Arr2[i];
 		if (Arr2[i] < min)
