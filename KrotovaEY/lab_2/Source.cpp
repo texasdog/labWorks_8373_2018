@@ -44,18 +44,22 @@ int main()
 {
 	const int size = 8;
 	int massif[size];
+	setlocale(0, "");
+	cout << "Массив:" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		massif[i] = rand();
 		cout << massif[i] << endl;
 	}
 	quickSort(massif, 0, size-1); 
+	cout << "Отсортированный по возрастнию массив:" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		cout << massif[i] << endl;
 	}
 	int k = 0;
 	int massif_2[size];
+	cout << "Нечётные значения массива:" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		if (massif[i] % 2 != 0)
@@ -81,7 +85,6 @@ int main()
 		}
 		sum += massif_2[j];
 	}
-	setlocale(0, "");
 	float crednee = sum / size_2;
 	cout << "Максимальное значение: " << max << endl;
 	cout << "Минимальное значение: " << min << endl;
