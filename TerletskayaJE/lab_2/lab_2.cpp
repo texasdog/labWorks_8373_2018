@@ -4,6 +4,7 @@ int main()
 {
 	setlocale(0, "");
 	const int size1 = 8;
+	int size2 = size1;
 	int i, j, timesym, odd = 0, sum = 0;
 	float avalue;
 	int arr[size1];
