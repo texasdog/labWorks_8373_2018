@@ -4,7 +4,7 @@ int main()
 {
 	setlocale(0, "");
 	const int size1 = 8;
-	int i, j, timesym, odd = 0, timeindex = 0, sum = 0;
+	int i, j, timesym, odd = 0, sum = 0;
 	float avalue;
 	int arr[size1];
 	cout << "Ñãåíåðèðîâàííûé ìàññèâ: ";
@@ -48,8 +48,8 @@ int main()
 	{
 		if (arr[i] % 2 == 1)
 		{
-			arr2[timeindex] = arr[i];
-			timeindex += 1;
+			arr2[odd] = arr[i];
+			odd += 1;
 		}
 	}
 	cout << endl;
