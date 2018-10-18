@@ -7,10 +7,10 @@ int main()
 	int i, j, timesym, odd = 0, timeindex = 0, sum = 0;
 	float avalue;
 	int arr[size1];
-	cout << "Ñãåíåğèğîâàííûé ìàññèâ: ";
+	cout << "Ã‘Ã£Ã¥Ã­Ã¥Ã°Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© Ã¬Ã Ã±Ã±Ã¨Ã¢: ";
 	for (i = 0; i < size1; i++)
 	{
-		arr[i] = rand() % 100;
+		arr[i] = rand() % 50;
 		if (arr[i] % 2 == 1)
 		{
 			odd += 1;
@@ -18,24 +18,22 @@ int main()
 		cout << " " << arr[i];
 	}
 	cout << endl;
-	bool exit = false;
-	cout << "Îòñîğòèğîâàííûé ìàññèâ: ";
-	while (!exit)
+	cout << "ÃÃ²Ã±Ã®Ã°Ã²Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© Ã¬Ã Ã±Ã±Ã¨Ã¢: ";
+	i = 0;
+	while (i < size2 - 1)
 	{
-		exit = true;
-		for (i = 0; i < size1 - 1; i++)
+		j = 0;
+		while (j < size2 - 1)
 		{
-			for (j = 0; j < size1 - i - 1; j++)
+			if (arr[j] > arr[j + 1])
 			{
-				if (arr[j] > arr[j + 1])
-				{
-					timesym = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = timesym;
-					exit = false;
-				}
+				timesym = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = timesym;
 			}
+			j+=1
 		}
+		i+=1
 	}
 	for (i = 0; i < size1; i++)
 	{
@@ -55,16 +53,16 @@ int main()
 		}
 	}
 	cout << endl;
-	cout << "Ìèíèìàëüíûé ıëåìåíò: " << arr2[0];
+	cout << "ÃŒÃ¨Ã­Ã¨Ã¬Ã Ã«Ã¼Ã­Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: " << arr2[0];
 	cout << endl;
-	cout << "Ìàêñèìàëüíûé ıëåìåíò: " << arr2[odd-1];
+	cout << "ÃŒÃ ÃªÃ±Ã¨Ã¬Ã Ã«Ã¼Ã­Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: " << arr2[odd-1];
 	cout << endl;
 	for (i = 0; i < size1; i++)
 	{
 		sum += arr2[i];
 	}
 	avalue = (float)sum / odd;
-	cout << "Ñğåäíåå çíà÷åíèå: " << avalue;
+	cout << "Ã‘Ã°Ã¥Ã¤Ã­Ã¥Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥: " << avalue;
 	cout << endl;
 	return 0;
 }
