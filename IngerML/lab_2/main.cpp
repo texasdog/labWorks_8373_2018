@@ -2,9 +2,10 @@
 #include <cstdlib>
 #include <ctime> 
 using namespace std;
-const int razm = 10;
+
 int main()
 {
+	const int razm = 10;
 	int i;
 	cout << "Mass 1:";
 	srand(time(0));
@@ -33,8 +34,8 @@ int main()
 	for (i = 0; i < razm; i++) { cout << arr[i] << ' ';	}
 	cout << endl;
 
-	int min = 101;
-	int max = 0;
+	int min = arr[0];
+	int max = arr[0];
 	int sum = 0;
 	cout << "Mass 3:";
 	for (i = 0; i < razm; i++)
@@ -44,15 +45,17 @@ int main()
 	cout << endl;
 
 	cout << "Control numbers:" << endl;
-	for (i = 0; i < razm; i++)
+	int sred;
+	for (i = 1; i < razm; i++)
 	{
 		if (arr[i] > max) { max = arr[i]; } 
 		if (arr[i] < min) { min = arr[i]; }
 		sum = sum + arr[i];
+		sred = sum / razm;
 	}
 	cout << "MAX: " << max << endl;
 	cout << "MIN: " << min << endl;
-	cout << "SRED: " << 0.1 * sum << endl;
+	cout << "SRED: " << sred << endl;
 	}
 	system("pause");
 }
