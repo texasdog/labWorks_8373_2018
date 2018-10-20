@@ -1,4 +1,4 @@
-﻿#include <iostream> 
+#include <iostream> 
 #include <time.h>
 #include <cstdlib>
 
@@ -6,261 +6,51 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
 	srand(time(NULL));
 	const int size = 10;
-	int arr[size];
-
+	int arr[size]; int arrnechet[size], chashka = 0,index = 1 , j = 0,len = 0;
+	float sum = 0; 
+	
+ 
 	for (int i = 0; i < size; i++)
 	{
 		arr[i] = rand() % 20;
+		cout << i + 1 << ":" << arr[i] << endl;
 	}
-	cout << "   ";
-
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << endl;
-
-	}
-
-	int i = 0, j = 0, u = 0;// вспомогательные переменные, играют роль индексов в массиве
-	int q, min, k;//пустышки
-	int minm = 0; int maxm = 0; float sred = 0; int sum = 0;
-	while (i < size) // пока не последний элемент
-	{
-		j = i;
-		min = arr[j];
-		k = j;
-		while (j < size) //пока не последний элемент
-		{
-			//эта часть находит минимальный элемент и его индекс (k) в оставшемся массиве
-			if (arr[j] < min) // (a[i] < a[j]) если по убыванию
-			{
-				min = arr[j];
-				k = j;
-			}
-			j = j + 1;
-		}
-		// здесь меняем местами передний несортированный элемент в массиве и минимальный элемент найденный в оставшемся массиве 
-
-		q = arr[i];
-		arr[i] = arr[k];
-		arr[k] = q;
-
-		i = i + 1;
-	}
-	int counter = 0;
-	//далее вывод массива
-	i = 0;
-	while (i < size)
-	{
-		cout << arr[i] << ' ';
-		i = i + 1;
-		if (arr[i] % 2 != 0) {
-			arr[counter] = arr[i];
-			counter++;
-		}
-		if (counter = 0) { cout << "нечетных чисел нет"; }
-		else {
-			for (int m = 0; m < counter; ++m) {
-				cout << arr[m];
-				if (arr[m] < minm) { minm = arr[m]; }
-				if (arr[m] > maxm) { maxm = arr[m]; }
-				sum = sum + arr[m];
-				}
-			float sred = sum / 2;
-	cout << "минимальное:" << minm << ' ' << "максимальное:" << maxm << ' ' << "среднее арифметическое:" << sred;
-		}
-
-		
-		}
-
 	
+	while (index < size)
+	{
+		j = index;
+		while (arr[j] < arr[j - 1]) {
+
+			if (arr[j] < arr[j - 1]) {
+				chashka = arr[j];
+				arr[j] = arr[j - 1];
+				arr[j - 1] = chashka;
+			}
+			j--;
+		}
+		index++;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	cout << "SortedArray:";
+	for (int z = 0; z < size; z++) {
+		cout << arr[z] << "   ";
+		if (arr[z] % 2 != 0) {
+			arrnechet[len++] = arr[z];
+		}
+	}
+	cout << endl;
+cout << "NechetArray:   ";
+for (int t = 0; t < len; t++) {
+	sum += arrnechet[t];
+	cout << arrnechet[t] << "   ";
+}
+	cout << endl;
+
+	cout << "Max nechet: " << arrnechet[len - 1] << endl;
+	cout << "Min nechet: " << arrnechet[0] << endl;
+	cout << "Srznach: " << sum / len << endl;
+
+	system("pause");
+	return(0);
+}
