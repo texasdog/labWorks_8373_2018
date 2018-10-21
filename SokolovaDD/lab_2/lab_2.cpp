@@ -12,6 +12,11 @@ int main()
 	int i(0);
 	for (i = 0; i < size1; i++)
 	{
+		arr1[i] = 0;
+	}
+	cout << endl;
+	for (i = 0; i < size1; i++)
+	{
 		arr1[i] = rand();
 		cout << arr1[i] << " ";
 	}
@@ -36,12 +41,14 @@ int main()
 		cout << arr1[i] << " ";
 		i++;
 	}
-	
+	cout << endl;
 	cout << "2nd array:   ";
+	for (i1 = 0; i1 < size1; i1++)
+	{
+		arr2[i] = 0;
+	}
 
-	
-
-	for (i1; i1<size1; i1++)
+	for (i1=0; i1<size1; i1++)
 	{
 	if((arr1[i1] % 2) == 1)
 	{
@@ -79,8 +86,8 @@ int main()
 
 	sr = sum / size2;
 	cout << endl;
-	cout << "min of 2nd array" << arr2[0] << endl;
-	cout <<"max of 2nd array" << arr2[size2] << endl;
-	cout << "Medium of 2nd array" << sr << endl;
+	cout << "min of 2nd array: " << arr2[0] << endl;
+	cout <<"max of 2nd array: " << arr2[size2] << endl;
+	cout << "Medium of 2nd array: " << sr << endl;
 	return(0);
 }
