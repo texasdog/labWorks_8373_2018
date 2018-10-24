@@ -1,1 +1,2 @@
-C++ developer, C++ Student at ElTech
+Directory of laboratory works by Evseev Semen
+C++ developer, ElTech student
