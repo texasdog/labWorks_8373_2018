@@ -12,7 +12,7 @@ int main()
 {
 	srand(time(0));
 	int Mas[Num];
-	int Odd[Num / 2 + Num % 2];
+	int Odd[Num];
 	for (int i = 0; i < Num; i++)
 	{
 		Mas[i] = rand();
