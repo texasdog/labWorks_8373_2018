@@ -11,7 +11,8 @@ const int Num = 10;
 int main()
 {
 	srand(time(0));
-	int Mas[10];
+	int Mas[Num];
+	int Odd[Num / 2 + Num % 2];
 	for (int i = 0; i < Num; i++)
 	{
 		Mas[i] = rand();
@@ -39,31 +40,35 @@ int main()
 		cout << "Sorted element #" << i+1 << ": " << Mas[i] << endl;
 	}
 	cout << endl;
-	for (int i = 0; i < Num; i=i+2)
+	int j = 0;
+	for (int i = 0; i < Num; i++)
 	{
-		cout << "Odd element #" << (i/2)+1 << ": " << Mas[i] << endl;
+		if ((Mas[i] % 2) != 0)
+		{
+			Odd[j] = Mas[i];
+			j++;
+			cout << "Odd element #" << j << ": " << Odd[j-1] << endl;
+		}
 	}
 	float sum = 0;
-	int min = Mas[0];
-	int max = Mas[0];
+	int min = Odd[0];
+	int max = Odd[0];
 	int sch = 0;
-	for (int i = 0; i < Num; i=i+2)
+	for (int i = 1; i < j; i++)
 	{
-		if (Mas[i] > max)
+		if (Odd[i] > max)
 		{
-			max = Mas[i];
+			max = Odd[i];
 		}
-		if (Mas[i] < min)
+		if (Odd[i] < min)
 		{
-			min = Mas[i];
+			min = Odd[i];
 		}
-		sum = sum + Mas[i];
-		sch++;
+		sum = sum + Odd[i];
 	}
 	cout << "Minimal element: " << min << endl;
 	cout << "Maximum element: " << max << endl;
-	cout << "Arithmetic mean: " << sum/sch << endl;
+	cout << "Arithmetic mean: " << sum/j<< endl;
 	_getch();
     return 0;
 }
-
