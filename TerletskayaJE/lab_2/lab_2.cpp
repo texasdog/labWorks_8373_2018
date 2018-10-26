@@ -32,9 +32,9 @@ int main()
 				arr[j] = arr[j + 1];
 				arr[j + 1] = timesym;
 			}
-			j+=1
+			j+=1;
 		}
-		i+=1
+		i+=1;
 	}
 	for (i = 0; i < size1; i++)
 	{
