@@ -1,19 +1,19 @@
 #include <iostream>
 #include <conio.h>
 #include <ctime>
-
-
 using namespace std;
 const int SIZE = 10;
-
-
 int main()
 {
 	srand(time(0));
-	*setlocale(0, "");
+	setlocale(0, "");
 
 	int arr_random[SIZE];
+	int arr_ncht[SIZE];
+	int ncht = 0;
+	
 	cout << "Сгенерированный массив: " << endl;
+	
 	for (int i = 0; i < SIZE; i++)
 	{
 		arr_random[i] = rand() % 100 + 1;
@@ -21,12 +21,11 @@ int main()
 	}
 	cout << endl;
 
-	cout << "Отсортированный по возрастанию массив: " << endl;
-
-	int j = 0, a = 0;
-	int c;
+	cout << "Остортированный массив по возрастанию: " << endl;
 	
-	int arr_sort[SIZE];
+	int a = 0;
+	int c;
+
 	for (int j = 0; j < SIZE; j++)
 	{
 		while (j < SIZE)
@@ -42,43 +41,46 @@ int main()
 				}
 				a++;
 			}
+			if (arr_random[j] % 2 == 1)
+			{
+				arr_ncht[ncht] = arr_random[j];
+				ncht++;
+			}
 			cout << arr_random[j] << " ";
 			j++;
 		}
 	}
 	cout << endl;
-
-	cout << "Нечетные элементы массива: " << endl;
 	
-	int i = 0;
-	for (i = 0; i < SIZE; i++)
+	cout << "Нечетные элементы массива: " << endl;
+
+	for (int k = 0; k < ncht; k++)
 	{
-		if (arr_random[i] % 2 == 1)
-		{
-			cout << arr_random[i] << " ";
-		}
+		cout << arr_ncht[k] << " ";
 	}
 	cout << endl;
-	int Min = arr_random[0];
-	int Max = arr_random[1];
+
+	int Min = arr_ncht[0];
+	int Max = arr_ncht[1];
 	float sum = 0;
 
-	for (int i = 0; i < SIZE; i++)
+	for (int k = 0; k < ncht; k++)
 	{
-		if (arr_random[i] < Min)
+		if (arr_ncht[k] < Min)
 		{
-			Min = arr_random[i];
+			Min = arr_ncht[k];
 		}
-		if (arr_random[i] > Max)
+		if (arr_ncht[k] > Max)
 		{
-			Max = arr_random[i];
+			Max = arr_ncht[k];
 		}
-		sum += arr_random[i];
+		sum += arr_ncht[k];
 	}
-	cout << "Минимальное число = " << Min << endl;
-	cout << "Максимальное число = " << Max << endl;
-	cout << "Среднее арифметическое = " << sum / SIZE << endl;
 
+	cout << "Минимальный элемент = " << Min << endl;
+	cout << "Максимальный элемент = " << Max << endl;
+	cout << "Среднее арифметическое = " << sum / ncht << endl;
+	
 	_getch();
 	return 0;
 }
