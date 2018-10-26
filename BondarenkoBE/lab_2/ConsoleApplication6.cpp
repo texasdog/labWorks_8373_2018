@@ -40,21 +40,21 @@ int main()
 		cout << "Sorted element #" << i+1 << ": " << Mas[i] << endl;
 	}
 	cout << endl;
-	int j = 0;
+	int OddNum = 0;
 	for (int i = 0; i < Num; i++)
 	{
 		if ((Mas[i] % 2) != 0)
 		{
-			Odd[j] = Mas[i];
-			j++;
-			cout << "Odd element #" << j << ": " << Odd[j-1] << endl;
+			Odd[OddNum] = Mas[i];
+			OddNum++;
+			cout << "Odd element #" << OddNum << ": " << Odd[OddNum - 1] << endl;
 		}
 	}
 	float sum = 0;
 	int min = Odd[0];
 	int max = Odd[0];
 	int sch = 0;
-	for (int i = 1; i < j; i++)
+	for (int i = 0; i < OddNum; i++)
 	{
 		if (Odd[i] > max)
 		{
@@ -68,7 +68,7 @@ int main()
 	}
 	cout << "Minimal element: " << min << endl;
 	cout << "Maximum element: " << max << endl;
-	cout << "Arithmetic mean: " << sum/j<< endl;
+	cout << "Arithmetic mean: " << sum/ OddNum << endl;
 	_getch();
     return 0;
 }
