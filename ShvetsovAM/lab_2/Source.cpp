@@ -9,8 +9,6 @@ int main()
 	setlocale(0, "");
 
 	int arr_random[SIZE];
-	int arr_ncht[SIZE];
-	int ncht = 0;
 	
 	cout << "Сгенерированный массив: " << endl;
 	
@@ -23,8 +21,10 @@ int main()
 
 	cout << "Остортированный массив по возрастанию: " << endl;
 	
+	int arr_ncht[SIZE];
 	int a = 0;
 	int c;
+	int ncht = 0;
 
 	for (int j = 0; j < SIZE; j++)
 	{
