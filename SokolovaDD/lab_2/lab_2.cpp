@@ -76,12 +76,11 @@ int main()
 		cout << arr2[i] << " ";
 		i++;
 	}
-	while (i < size2);
+	i = 0;
+	for (i,i < size2-1,i++)
 	{
-		arr2[i] = arr1[i1];
 		sum = sum + arr2[i];
-		i1 = i1 + 2;
-		i++;
+		i1 = i1 + 1;
 	}
 
 	sr = sum / size2;
