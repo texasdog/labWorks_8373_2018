@@ -45,21 +45,21 @@ int main()
 	const int size = 8;
 	int massif[size];
 	setlocale(0, "");
-	cout << "Ìàññèâ:" << endl;
+	cout << "ÃŒÃ Ã±Ã±Ã¨Ã¢:" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		massif[i] = rand();
 		cout << massif[i] << endl;
 	}
 	quickSort(massif, 0, size-1); 
-	cout << "Îòñîðòèðîâàííûé ïî âîçðàñòíèþ ìàññèâ:" << endl;
+	cout << "ÃŽÃ²Ã±Ã®Ã°Ã²Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© Ã¯Ã® Ã¢Ã®Ã§Ã°Ã Ã±Ã²Ã­Ã¨Ã¾ Ã¬Ã Ã±Ã±Ã¨Ã¢:" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		cout << massif[i] << endl;
 	}
 	int k = 0;
 	int massif_2[size];
-	cout << "Íå÷¸òíûå çíà÷åíèÿ ìàññèâà:" << endl;
+	cout << "ÃÃ¥Ã·Â¸Ã²Ã­Ã»Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã :" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		if (massif[i] % 2 != 0)
@@ -69,8 +69,8 @@ int main()
 			k++;
 		}
 	}
-	int max = 0; 
-	int min = 2147483647;
+	int max = massif_2[0]; 
+	int min = massif_2[0];
 	int sum = 0;
 	const int size_2 = k++;
 	for (int j = 0; j < size_2; j++)
@@ -86,9 +86,9 @@ int main()
 		sum += massif_2[j];
 	}
 	float crednee = sum / size_2;
-	cout << "Ìàêñèìàëüíîå çíà÷åíèå: " << max << endl;
-	cout << "Ìèíèìàëüíîå çíà÷åíèå: " << min << endl;
-	cout << "Ñðåäíåå çíà÷åíèå: " << crednee << endl;
+	cout << "ÃŒÃ ÃªÃ±Ã¨Ã¬Ã Ã«Ã¼Ã­Ã®Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥: " << max << endl;
+	cout << "ÃŒÃ¨Ã­Ã¨Ã¬Ã Ã«Ã¼Ã­Ã®Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥: " << min << endl;
+	cout << "Ã‘Ã°Ã¥Ã¤Ã­Ã¥Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥: " << crednee << endl;
 	_getch();
 	return 0;
 }
