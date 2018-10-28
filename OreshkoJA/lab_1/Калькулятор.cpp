@@ -12,12 +12,13 @@ int main()
 	cout << "Введите второе число:";
 	cin >> second;
 	float result;
+	int error = 0;
 	if (second == 0) {
 		if (sign == '/') {
 			cout << "Делить на ноль нельзя" << endl;
+			error = 1;
 		}
 	}
-	else {
 		switch (sign) {
 		case '+': result = first + second;
 			break;
@@ -27,10 +28,12 @@ int main()
 			break;
 		case '/': result = first / second;
 			break;
-		default: cout << "Неправильный ввод знака, пожалуйста, нажмите кнопку повтора" << endl;	
+		default: 	error = 1;
+			cout << "Неправильный ввод знака" << endl;
 			break;
 		}
-		cout << "Результат:" << result << endl;
-	}
+		if (error == 1) {  }
+		else
+		{cout << "Результат:" << result << endl;}
 	system("pause");
 }
