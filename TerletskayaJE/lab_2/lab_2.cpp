@@ -8,18 +8,14 @@ int main()
 	int i, j, timesym, odd = 0, sum = 0;
 	float avalue;
 	int arr[size1];
-	cout << "Ñãåíåðèðîâàííûé ìàññèâ: ";
+	cout << "Сгенерированный массив: ";
 	for (i = 0; i < size1; i++)
 	{
 		arr[i] = rand() % 50;
-		if (arr[i] % 2 == 1)
-		{
-			odd += 1;
-		}
 		cout << " " << arr[i];
 	}
 	cout << endl;
-	cout << "Îòñîðòèðîâàííûé ìàññèâ: ";
+	cout << "Отсортированный массив: ";
 	i = 0;
 	while (i < size2 - 1)
 	{
@@ -32,9 +28,9 @@ int main()
 				arr[j] = arr[j + 1];
 				arr[j + 1] = timesym;
 			}
-			j+=1;
+			j += 1;
 		}
-		i+=1;
+		i += 1;
 	}
 	for (i = 0; i < size1; i++)
 	{
@@ -54,16 +50,25 @@ int main()
 		}
 	}
 	cout << endl;
-	cout << "Ìèíèìàëüíûé ýëåìåíò: " << arr2[0];
+	cout << "Массив с нечетными элементами первого: ";
+	for (i = 0; i < size2; i++)
+	{
+		if (arr2[i] != 0)
+		{
+			cout << " " << arr2[i];
+		}
+	}
 	cout << endl;
-	cout << "Ìàêñèìàëüíûé ýëåìåíò: " << arr2[odd-1];
+	cout << "Минимальный элемент: " << arr2[0];
+	cout << endl;
+	cout << "Максимальный элемент: " << arr2[odd - 1];
 	cout << endl;
 	for (i = 0; i < size1; i++)
 	{
 		sum += arr2[i];
 	}
 	avalue = (float)sum / odd;
-	cout << "Ñðåäíåå çíà÷åíèå: " << avalue;
+	cout << "Среднее значение: " << avalue;
 	cout << endl;
 	return 0;
 }
