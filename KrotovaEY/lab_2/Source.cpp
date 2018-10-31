@@ -72,7 +72,7 @@ int main()
 	int max = massif_2[0]; 
 	int min = massif_2[0];
 	int sum = 0;
-	const int size_2 = k++;
+	const int size_2 = k;
 	for (int j = 0; j < size_2; j++)
 	{
 		if (massif_2[j] > max)
