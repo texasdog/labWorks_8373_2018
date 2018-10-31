@@ -8,11 +8,11 @@ int main() {
 	float left, right, result = 0;
 	char sign;
 	bool errorcheck = false;
-	cout << "Ââåäèòå ëåâûé îïåðàíä: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã«Ã¥Ã¢Ã»Ã© Ã®Ã¯Ã¥Ã°Ã Ã­Ã¤: ";
 	cin >> left;
-	cout << "Ââåäèòå ïðàâûé îïåðàíä: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã°Ã Ã¢Ã»Ã© Ã®Ã¯Ã¥Ã°Ã Ã­Ã¤: ";
 	cin >> right;
-	cout << "Ââåäèòå çíàê: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã§Ã­Ã Ãª: ";
 	cin >> sign;
 	do {
 		errorcheck = false;
@@ -25,18 +25,19 @@ int main() {
 			break;
 		case '/': if (right == 0) {
 			errorcheck = true;
-			cout << "Äåëèòü íà íîëü íåëüçÿ" << endl
-				<< "Ââåäèòå ïðàâûé îïåðàíä: ";
+			cout << "Ã„Ã¥Ã«Ã¨Ã²Ã¼ Ã­Ã  Ã­Ã®Ã«Ã¼ Ã­Ã¥Ã«Ã¼Ã§Ã¿" << endl
+				<< "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã°Ã Ã¢Ã»Ã© Ã®Ã¯Ã¥Ã°Ã Ã­Ã¤: ";
 			cin >> right;
-			} else result = left / right;
+			} 
+			else result = left / right;
 			break;
 		default: errorcheck = true;
-			cout << "Ââåäåí íåïðàâèëüíûé çíàê" << endl
-					<< "Ââåäèòå çíàê: ";
+			cout << "Ã‚Ã¢Ã¥Ã¤Ã¥Ã­ Ã­Ã¥Ã¯Ã°Ã Ã¢Ã¨Ã«Ã¼Ã­Ã»Ã© Ã§Ã­Ã Ãª" << endl
+					<< "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã§Ã­Ã Ãª: ";
 			cin >> sign;
 		};
 	} while (errorcheck);
-	cout << "Ðåçóëüòàò: " << result << endl;
+	cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²: " << result << endl;
 	_getch();
 	return 0;
 }
