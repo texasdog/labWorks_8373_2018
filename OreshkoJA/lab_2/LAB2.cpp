@@ -51,7 +51,7 @@ while (i > 0) {
 		{
 			if (arr2[i] > max)
 			{
-				max = arr[i];
+				max = arr2[i];
 			}
 			if (arr2[i] < min) {
 				min = arr2[i];
