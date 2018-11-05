@@ -33,26 +33,32 @@ while (i > 0) {
 			cout << arr[i] << ' ';
 		}
 		cout << endl;
-		int min = arr[0];
-		int max = arr[0];
-		double sum = 0;
 		cout << "Odd numbers:";
+		int arr2[con];
+		int cons = 0;
 		for (i = 0; i < con; i++) {
-			if (arr[i] % 2) { cout << arr[i] << " "; }
+			if ((arr[i] % 2)==1) { 
+				arr2[cons] = arr[i];
+				cout << arr2[cons] << " ";
+				cons++;
+			}
 		}
 		cout << endl;
-		for (i = 0; i < con; i++)
+		int min = arr2[0];
+		int max = arr2[0];
+		double sum = 0;
+		for (i = 0; i < cons; i++)
 		{
-			if (arr[i] > max)
+			if (arr2[i] > max)
 			{
 				max = arr[i];
 			}
-			if (arr[i] < min) {
-				min = arr[i];
+			if (arr2[i] < min) {
+				min = arr2[i];
 			}
-			sum = sum + arr[i];
+			sum = sum + arr2[i];
 		}
-		sum = sum / con;
+		sum = sum / cons;
 		cout << "MAX: " << max << endl;
 		cout << "MIN: " << min << endl;
 		cout << "SUM: " << sum << endl;
