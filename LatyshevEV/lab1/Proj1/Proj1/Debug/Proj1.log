@@ -1,3 +1,0 @@
-﻿  main.cpp
-c:\users\роберт\source\repos\proj1\proj1\main.cpp(27): warning C4805: !=: небезопасное смешение типа "float" и типа "bool" в операции
-  Proj1.vcxproj -> C:\Users\Роберт\source\repos\Proj1\Debug\Proj1.exe
