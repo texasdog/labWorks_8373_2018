@@ -68,7 +68,7 @@ void third_task(int items[])
 			max = items[i];
 		}
 		sum += items[i];
-		
+
 	}
 	for (int i = 0; i < lenght; i++)
 	{
