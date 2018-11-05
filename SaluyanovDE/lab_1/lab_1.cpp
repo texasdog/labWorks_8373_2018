@@ -22,15 +22,17 @@ int main()
 	switch (Sign) {
 	case '*': Result = Val1*Val2;
 		break;
-	case '/': if (Val2 != 0) {
-		 Result = Val1 / Val2;
-		 break;
-	}		  
-			  else {
-				  cout << "Error: division by zero";
-				  a++;
-				  break;
-				   }
+	case '/': if (Val2 != 0) 
+				{
+					Result = Val1 / Val2;
+					break;
+				}		  
+			  else 
+				{
+					cout << "Error: division by zero";
+					a++;
+					break;
+				}
 			  break;
 	case '+':  Result = Val1 + Val2;
 		break;
@@ -40,8 +42,13 @@ int main()
 		a++;
 		break;
 	}
-	if (a == 0) {
+	if (a == 0) 
+	{
 		cout << Val1 << " " << Sign << " " << Val2 << " " << "=" << " " << Result;
-	_getch();
+		_getch();
+	}
+	else 
+	{
+		_getch();
 	}
 }
