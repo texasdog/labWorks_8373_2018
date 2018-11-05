@@ -2,12 +2,9 @@
 #include "conio.h"
 #include "string.h"
 #include <iostream>
-
-#define N 1000
-
 using namespace std;
 
-int spts(char str1[], char str2[], int i, int j)
+int StringPartToString(char str1[], char str2[], int i, int j)
 {//string part to 2nd string
 	int k = 0;
 	for (i; i <= j; i++)
@@ -19,7 +16,7 @@ int spts(char str1[], char str2[], int i, int j)
 	return 0;
 }
 
-int sce(char str[], int i, int j)
+int StringCodesSum(char str[], int i, int j)
 {//symbol of string from i to j-1 codes sum 
 	int result = 0;
 	for (i; i < j; i++)
@@ -31,9 +28,10 @@ int sce(char str[], int i, int j)
 
 int main()
 {
-	char str[N], str_1[N], str_2[N];
-	int I[4];											            //Words scopes
-	int s1(0), s2(0), words_count(0);					//s1,s2 == sum of the neighboring word codes
+	const int N = 500;
+	char str[N], word1[N], word2[N];
+	int WordsScopes[4];											
+	int s1(0), s2(0), words_count(0);				
 	cout << "Enter the string: ";
 	cin.getline(str, N);
 	int n = strlen(str);
@@ -49,7 +47,7 @@ int main()
 	}
 	for (int i = 0; i < words_count - 1; i++)
 	{
-		I[0] = I[1] = I[2] = I[3] = 0;
+		WordsScopes[0] = WordsScopes[1] = WordsScopes[2] = WordsScopes[3] = 0;
 		int k = 1;
 		for (int j = 0; j < n; j++)
 		{
@@ -57,42 +55,42 @@ int main()
 			{
 				if (k == 1)
 				{
-					I[k] = j;
+					WordsScopes[k] = j;
 					k++;
 				}
 				if (k == 2)
 				{
-					I[k] = j + 1;
+					WordsScopes[k] = j + 1;
 				}
 				if (k == 3)
 				{
-					I[k] = j;
+					WordsScopes[k] = j;
 				}
 				k++;
 			}
-			if (I[3] != 0)
+			if (WordsScopes[3] != 0)
 			{
-				s1 = sce(str, I[0], I[1]);
-				s2 = sce(str, I[2], I[3]);
+				s1 = StringCodesSum(str, WordsScopes[0], WordsScopes[1]);
+				s2 = StringCodesSum(str, WordsScopes[2], WordsScopes[3]);
 				if (s1 > s2)
 				{
-					spts(str, str_1, I[0], I[1] - 1);
-					spts(str, str_2, I[2], I[3]);
-					strcat_s(str_2, str_1);
-					int l1 = I[0];
-					for (int l = 0; l < strlen(str_2); l++)
+					StringPartToString(str, word1, WordsScopes[0], WordsScopes[1] - 1);
+					StringPartToString(str, word2, WordsScopes[2], WordsScopes[3]);
+					strcat_s(word2, word1);
+					int l1 = WordsScopes[0];
+					for (int l = 0; l < strlen(word2); l++)
 					{
-						str[l1] = str_2[l];
+						str[l1] = word2[l];
 						l1++;
 					}
-					j -= strlen(str_1);
+					j -= strlen(word1);
 				}
 				else
 				{
-					j -= (I[3] - I[2]);
+					j -= (WordsScopes[3] - WordsScopes[2]);
 				}
-				I[0] = j;
-				I[1] = I[2] = I[3] = 0;
+				WordsScopes[0] = j;
+				WordsScopes[1] = WordsScopes[2] = WordsScopes[3] = 0;
 				k = 1;
 				j--;
 			}
