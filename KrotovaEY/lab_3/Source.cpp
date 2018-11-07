@@ -20,6 +20,8 @@ int main()
 {
 	const int size = 50;
 	char str[size] = " ";
+	setlocale(0, "");
+	cout << "Введите строку: ";
 	cin.getline(str, size);
 	int mas[size] = { 0 };
 	int  sizemas= 0;
@@ -84,7 +86,7 @@ int main()
 		}
 		mas[ind]=max + 1;
 	}
-	cout << str2;
+	cout <<"Отсортированная строка: "<< str2;
 	_getch();
 	return 0;
 }
