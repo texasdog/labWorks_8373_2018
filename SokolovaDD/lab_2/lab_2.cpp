@@ -1,92 +1,86 @@
 #include <iostream> 
 #include <cstdlib> 
-
 using namespace std;
 
 int main()
 {
-	const int size1(7);
-	const int size2 = (size1 / 2 + size1 % 2);
-	int arr1[size1], arr2[size2];
+	const  int size1(7);
+	int arr1[size1], arr2[size1], i;
 	cout << "1st array:   ";
-	int i(0);
-	for (i = 0; i < size1; i++)
+	for (int i=0 ; i < size1; i++)
 	{
 		arr1[i] = 0;
 	}
 	cout << endl;
-	for (i = 0; i < size1; i++)
+	for (i=0; i < size1; i++)
 	{
 		arr1[i] = rand();
 		cout << arr1[i] << " ";
 	}
 	cout << endl;
-	i = 0;
+	int c = 0;
 	int i1 = 0;
 	int change;
 	cout << "sorted 1st array: ";
-	while (i < size1)
+	while (c < size1)
 	{
-		i1 = i;
+		i1 = c;
 		while (i1 < size1)
 		{
-			if (arr1[i1] < arr1[i])
+			if (arr1[i1] < arr1[c])
 			{
 				change = arr1[i1];
-				arr1[i1] = arr1[i];
-				arr1[i] = change;
+				arr1[i1] = arr1[c];
+				arr1[c] = change;
 			}
 			i1++;
 		}
-		cout << arr1[i] << " ";
-		i++;
+		cout << arr1[c] << " ";
+		c++;
 	}
 	cout << endl;
+
 	cout << "2nd array:   ";
-	for (i1 = 0; i1 < size1; i1++)
-	{
-		arr2[i] = 0;
-	}
-
-	for (i1=0; i1<size1; i1++)
-	{
-	if((arr1[i1] % 2) == 1)
-	{
-		arr2[i1] = arr1[i1];
-	}
-	 cout << arr2[i1] << "  ";
-	}
-
-	i = 0;
-	i1 = 0;
+	int k = 0;
+	int b = 0;
+	int len;
 	int sum(0), sr(0);
-	while (i < size2)
-	{
-		i1 = i;
-		while (i1 < size2)
-		{
-			if (arr2[i1] < arr2[i])
+	for (k; k < size1; k++)
+	{ 
+		
+			if ((arr1[k] % 2) == 1)
 			{
-				change = arr2[i1];
-				arr2[i1] = arr2[i];
-				arr2[i] = change;
+				arr2[b] = arr1[k];
+				cout << arr2[b] << "  ";
+				b++;
+				len = b;
 			}
-			i1++;
-		}
-		cout << arr2[i] << " ";
-		i++;
 	}
-	i = 0;
-	for (i,i < size2-1,i++)
+	for (b = 0; b < len; b++)
 	{
-		sum = sum + arr2[i];
-		i1 = i1 + 1;
+		sum += arr2[b];
 	}
-
-	sr = sum / size2;
+	int j ;
+	int min = arr2[0];
+	int max = arr2[0];
+	for (j=0; j < len-1; j++)
+	{
+		if (arr2[j + 1] > max)
+		{
+			max = arr2[j + 1];
+		}
+		if (arr2[j + 1] < min)
+		{
+			min = arr2[j + 1];
+		}
+	}
 	cout << endl;
-	cout << "min of 2nd array: " << arr2[0] << endl;
-	cout <<"max of 2nd array: " << arr2[size2] << endl;
+	sr = sum / len;
+	cout << endl;
+	cout << "min of 2nd array: " << min << endl;
+	cout <<"max of 2nd array: " << max << endl;
 	cout << "Medium of 2nd array: " << sr << endl;
-	return(0);
+	system("pause");
+	return 0;
+
 }
