@@ -1,17 +1,39 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int deg(int fn, int dg)
+double deg(double fn, double dg)
 {
-	int help(0);
-	int fn1 = fn;
-	while (dg - help != 1)
+	double help(0);
+	double fn1 = fn;
+	if (dg > 1)
 	{
-		fn = fn*fn1;
-		help++;
+		while (dg - help != 1)
+		{
+			fn = fn*fn1;
+			help++;
+		}
+		return fn;
 	}
-	return fn;
+	else
+	{
+		if (dg == 0)
+		{
+			fn = 0;
+			return fn;
+		}
+		else 
+		{
+			while (dg + help != -1)
+			{
+				fn = fn*fn1;
+				help++;
+			}
+			fn = 1 / fn;
+			return fn;
+		}
+	}
 }
+
 int factor(int fact)
 {
 	int helper(1), final(1);
