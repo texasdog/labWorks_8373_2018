@@ -28,9 +28,9 @@ int main()
 				arr[j] = arr[j + 1];
 				arr[j + 1] = timesym;
 			}
-			j ++;
+			j++;
 		}
-		i ++;
+		i++;
 	}
 	for (i = 0; i < size1; i++)
 	{
@@ -46,7 +46,7 @@ int main()
 		if (arr[i] % 2 == 1)
 		{
 			arr2[odd] = arr[i];
-			odd ++;
+			odd++;
 		}
 	}
 	cout << endl;
