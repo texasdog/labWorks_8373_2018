@@ -7,61 +7,72 @@
 
 using namespace std;
 
-float my_power(float dig, int pow)
+double my_power(double dig, int pow)
 {
-	float unswer = 1;
+	double answer = 1;
 	if (pow > 0)
 	for (int i = 1; i <= pow; i++)
 		{
-			unswer *= dig;
+			answer *= dig;
 		}
 	else
 		for (int i = pow; i < 0; i++)
 		{
-			unswer /= dig;
+			answer /= dig;
 		}
-	return unswer;
+	return answer;
 }
 
 int my_fact(int dig)
 {
-	int unswer = 1;
+	int answer = 1;
 	for (int i = 2; i <= dig; i++)
 	{
-		unswer *= i;
+		answer *= i;
 	}
-	return unswer;
+	return answer;
 }
 
-double my_root(float dig)
+double my_root(double dig)
 {
-	double unswer = dig;
+	if (dig == 0)
+		return 0;
+	double answer = dig;
 	for (int i = 1; i <= 10; i++)
 	{
-		unswer = 0.5*(unswer + dig / unswer);
+		answer = 0.5*(answer + dig / answer);
 	}
-	return unswer;
+	return answer;
+}
+
+int nod(int a, int b) {
+	if (b == 0)
+		return a;
+	return nod(b, a%b);
 }
 
 bool my_prime(int prm)
 {
 	for (int a = 1; a <= prm / 2; a++)
 	{
-		if (!((((int)my_power(a, prm - 1) - 1) % prm) == 0))
+		if (nod(a, prm) != 1)
+			continue;
+		if ((((int)my_power(a, prm - 1) - 1) % prm) != 0)
 		{
-			return 0;
+			return false;
 		}
 	}
-	return 1;
+	return true;
 }
-
 
 int main()
 {
 	setlocale(0, "");
 	cout << "1 - возведение в степень, 2 - факториал, 3 - корень квадратный, 4 - проверка на простоту: ";
+	cout.flags(8192);
+	cout.unsetf(16);
 	int chs=0;
-	float dig1;
+	double dig1;
 	int digN;
 	while ((chs != 1) && (chs != 2) && (chs != 3) && (chs != 4))
 	{
@@ -81,20 +92,26 @@ int main()
 				cout << "¬ведите степень (целую): ";
 				cin >> digN;
 			}
-			cout << "ќтвет: " << my_power(dig1, digN);
+			if ((my_power(dig1, digN) - (long long int)my_power(dig1, digN)) == 0)
+				cout << "ќтвет: " << (long long int)my_power(dig1, digN);
+			else
+				cout << "ќтвет: " << my_power(dig1, digN);
 			break;
 		case 2:
-			cout << "¬ведите основание факториала (целое): ";
+			cout << "¬ведите основание факториала (неотрицательное целое): ";
 			cin >> digN;
 			cout << "ќтвет: " << my_fact(digN);
 			break;
 		case 3:
 			cout << "¬ведите число под корнем (неотрицательное): ";
 			cin >> dig1;
-			cout << "ќтвет: " << my_root(dig1);
+			if ((my_root(dig1) - (long long int)my_root(dig1)) == 0)
+				cout << "ќтвет: " << (long long int)my_root(dig1);
+			else
+				cout << "ќтвет: " << my_root(dig1);
 			break;
 		case 4:
-			cout << "¬ведите провел€емое число (целое): ";
+			cout << "¬ведите провер€емое число (целое, до 12 включительно): ";
 			cin >> digN;
 			if (my_prime(digN))
 			{
