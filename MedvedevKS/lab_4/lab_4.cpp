@@ -1,6 +1,3 @@
-// lab_4.cpp: определяет точку входа для консольного приложения.
-//
-
 #include "stdafx.h"
 #include <conio.h>
 #include <iostream>
@@ -40,6 +37,10 @@ int factorial(int number)
 
 double SquareRoot(double number)
 {
+	if (number < 0)
+	{
+		return -2;
+	}
 	double result = 0;
 	for (int i = 0; i < 10000; i++)
 	{
@@ -48,23 +49,21 @@ double SquareRoot(double number)
 	return result;
 }
 
-int PrimeCheck(int number)
+bool PrimeCheck(int number)
 {
 	if (number <= 1)
 	{
-		return -1;
+		return false;
 	}
 	for (int i = 2; i <= SquareRoot(number); i++)
 	{
 		if (number % i == 0)
 		{
-			return 0;
+			return false;
 		}
 	}
-	return 1;
+	return true;
 }
-
-
 
 int main()
 {
@@ -74,7 +73,7 @@ int main()
 	cin >> number;
 	cout << "Enter a power: ";
 	cin >> n;
-	cout << "***************************CHECK***************************\n";
+	cout << "******************************CHECK******************************\n";
 	cout <<"\'" << n <<"\' power of \'" << number << "\' is " << intPower(number, n) << endl;
 	switch (factorial(number))
 	{
@@ -82,24 +81,28 @@ int main()
 		cout << "Factorial of \'" << number << "\' doesnt exist" << endl;
 		break;
 	case(-1):
-		cout << "Factorial of \'" << number << "\' is more than 2 billions" << endl;
+		cout << "Factorial of \'" << number << "\' is more than 2 billion" << endl;
 		break;
 	default:
-		cout << "Factorial of \'" << int(number) << "\' : " << factorial(number) << endl;
+		cout << "Factorial of \'" << int(number) << "\' is " << factorial(number) << endl;
 	}
-	cout << "Square root of \'" << number << "\' : " << SquareRoot(number) << endl;
-	switch (PrimeCheck(number))
+	if (SquareRoot(number) == -2)
 	{
-	case(-1) :
-		cout << "PrimeCheckError: the number is less than or equal to 1" << endl;
-		break;
-	case(0) :
-		cout << "\'" << number << "\' is not a prime number" << endl;
-		break;
-	case(1):
+		cout << "SqureRoot: there is no square root in the field of real numbers\n";
+	}
+	else
+	{
+		cout << "Squre root of \'" << number << "\' is " << SquareRoot(number) << endl;
+	}
+	if (PrimeCheck(number))
+	{
 		cout << "\'" << number << "\' is a prime number" << endl;
 	}
-	cout << "***************************DONE***************************";
+	else
+	{
+		cout << "\'" << number << "\' is not a prime number" << endl;
+	}
+	cout << "*******************************DONE******************************";
 	_getch();
     return 0;
 }
