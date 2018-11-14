@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 
-int StringPartToString(char str1[], char str2[], int i, int j)
-{//string part to 2nd string
+void StringPartToString(char str1[], char str2[], int i, int j)
+{
 	int k = 0;
 	for (i; i <= j; i++)
 	{
@@ -13,11 +13,10 @@ int StringPartToString(char str1[], char str2[], int i, int j)
 		k++;
 	}
 	str2[k] = 0;
-	return 0;
 }
 
 int StringCodesSum(char str[], int i, int j)
-{//symbol of string from i to j-1 codes sum 
+{
 	int result = 0;
 	for (i; i < j; i++)
 	{
