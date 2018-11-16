@@ -5,14 +5,19 @@ double deg(double fn, double dg)
 {
 	double help(0);
 	double fn1 = fn;
-	if (dg > 1)
+	if (dg > 0)
 	{
-		while (dg - help != 1)
+		if (dg == 1)
+			return fn;
+		else
 		{
-			fn = fn*fn1;
-			help++;
+			while (dg - help != 1)
+			{
+				fn = fn*fn1;
+				help++;
+			}
+			return fn;
 		}
-		return fn;
 	}
 	else
 	{
