@@ -1,26 +1,28 @@
+#include "pch.h"
 #include <iostream>
 #include <conio.h>
+
 
 using namespace std;
 
 double power(double number_stepen, int stepen)
 {
 	double rez = 1;
-	
-		if (stepen > 0) {
-			for (int i = 0; i < stepen; i++)
-			{
-				rez *=  number_stepen;
-			}
-		}
-		else
+
+	if (stepen > 0) {
+		for (int i = 0; i < stepen; i++)
 		{
-			for (int i =0; i < (-1) * stepen; i++)
-			{
-				rez = rez * number_stepen;
-			}
-			rez = 1 / rez;
+			rez *= number_stepen;
 		}
+	}
+	else
+	{
+		for (int i = 0; i < (-1) * stepen; i++)
+		{
+			rez = rez * number_stepen;
+		}
+		rez = 1 / rez;
+	}
 
 	return rez;
 }
@@ -31,13 +33,13 @@ int fact(int number_fact)
 
 	for (int i = 1; i <= number_fact; i++)
 	{
-	rez *= i;
+		rez *= i;
 	}
 
 	return rez;
 }
 
-double sqrt(int number_sqrt) 
+double sqrt(int number_sqrt)
 {
 	double t;
 	double rez = number_sqrt / 2;
@@ -49,21 +51,22 @@ double sqrt(int number_sqrt)
 	return rez;
 }
 
-bool prime (int number_prime)
+bool prime(int number_prime)
 {
-	bool prime = true;
+	bool rez = false;
+
 	for (int i = 2; i < number_prime; i++)
 	{
 		if (number_prime%i == 0)
 		{
-			prime = false;
+			rez=true;
 		}
 	}
-	return prime;
+	
+	return rez;
 }
 
 int main()
-
 {
 	cout << "First: " << endl;
 	int number_stepen, stepen;
@@ -95,7 +98,7 @@ int main()
 		}
 	}
 	cout << endl;
-	
+
 
 	cout << "Third: " << endl;
 	int number_sqrt;
@@ -104,12 +107,12 @@ int main()
 	if (number_sqrt < 0)
 	{
 		cout << "It is impossible to find sqrt from this number: " << number_sqrt << endl;
-		
-	} 
+
+	}
 	else
 	{
 		cout << "Sqrt from " << number_sqrt << " = " << sqrt(number_sqrt) << endl;
-		
+
 	}
 	cout << endl;
 
@@ -124,7 +127,7 @@ int main()
 	}
 	else
 	{
-		if (prime(number_prime) == 1)
+		if (prime(number_prime)==false)
 		{
 			cout << "Number " << number_prime << " is a prime number" << endl;
 		}
